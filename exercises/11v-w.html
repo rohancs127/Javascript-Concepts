@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //11v
+        function fizzBuzz(){
+            for(let i=1; i<21; i++){
+                if(i%3===0 && i%5===0)
+                    console.log('FizzBuzz');
+                else if(i%5===0)
+                    console.log('Buzz');
+                else if(i%3===0)
+                    console.log('Fizz');
+                else
+                    console.log(i);
+            }
+        }
+        fizzBuzz();
+
+
+        //11w
+        function findIndex(array, word){
+            let index=-1;
+        for(i=0; i<array.length; i++){
+            if(array[i] === word){
+                index=i;
+                break;
+            }
+            else
+                index=-1;
+        }
+            return index;
+        }
+
+        function uniqueElement(array){
+            let newArray =[];
+            for(let i=0; i<array.length;i++){
+                let word=array[i];
+                if(findIndex(newArray,word)===-1)
+                newArray.push(word);
+                
+            }
+            return newArray;
+        }
+
+        console.log(uniqueElement(['green','red','blue','red']));
+        console.log(uniqueElement(['red','green','green','red']));
+    </script>
+</body>
+</html>

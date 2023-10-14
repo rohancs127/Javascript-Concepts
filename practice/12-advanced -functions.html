@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function greeting(){
+        //     console.log("Hello World!");
+        // }
+        // greeting();
+
+        // let function1 = function greetHello(){
+        //     console.log("Hello");
+        // }
+        // console.log(function1);
+        // console.log(typeof(function1));
+
+        // function1();
+
+        // //Anonymous function
+        // let function2 = function(){
+        //     console.log("Hello");
+        // }
+
+
+        // let obj = {
+        //     name:"Math",
+        //     fun: function(a,b) {
+        //         return a+b;
+        //     }
+        // }
+        // console.log(obj.fun(1,3));
+
+        // //passing a function inside another function
+        // let function3 = function(func){
+        //     console.log(func);
+        // }
+
+        // let function4 = function(){
+        //     console.log("Hello World!");
+        // }
+        // function3(function4);
+
+
+        // setTimeout(function(){
+        //     console.log("Display after 3 seconds")
+        // },3000);
+
+
+        // setInterval(function(){
+        //     console.log("Interval")
+        // }, 1000);
+
+
+        ['string1', 'string2', 'string3'].forEach(
+            function(value){
+                console.log(value);
+            }
+        );
+
+
+        //continue in forEach
+        ['string1', 'string2', 'string3'].forEach(
+            function(value, index){
+
+                if(value==='string2')
+                return;
+
+                console.log(value);
+                console.log(index);
+            }
+        );
+
+    </script>
+</body>
+</html>

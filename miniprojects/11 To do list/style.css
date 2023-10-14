@@ -1,0 +1,43 @@
+body{
+    font-family: arial;
+}
+.placeholder3{
+    padding-top: 10px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    margin-right: 10px;
+}
+.date-class{
+    padding-top: 6px;
+    padding-bottom: 7px;
+    padding-left: 8px;
+    padding-right: 5px;
+    margin-right: 10px;
+}
+.add-button{
+    padding: 12px;
+    padding-left: 37px;
+    padding-right: 39px;
+    border: none;
+    color: white;
+    background-color: green;
+    cursor: pointer;
+}
+
+.delete-button{
+    color: white;
+    background-color: rgb(102, 0, 0);
+    border:none;
+    padding: 12px;
+    padding-left: 28px;
+    padding-right: 30px;
+    max-height: 38.52px;
+}
+
+.display3{
+    margin-top: 5px;
+    display:grid;
+    grid-template-columns: 200px 150px 100px;
+    row-gap: 5px;
+    align-items: center;
+}

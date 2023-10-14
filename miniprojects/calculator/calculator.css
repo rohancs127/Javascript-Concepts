@@ -1,0 +1,38 @@
+body{
+    background-color: black;
+}
+
+.digit-button, .clear-button{
+    width:60px;
+    height: 60px;
+    font-size: 28px;
+    padding: 10px 20px;
+    margin-left: 6px;
+    background-color: rgb(49, 49, 49);
+    border: none;
+    color: white;
+    border-radius: 50%;
+}
+
+.clear-button{
+    font-size: 18px;
+    padding: 16px 4px;
+}
+.symbol-button{
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+    padding: 10px 20px;
+    margin-left: 6px;
+    background-color: orange;
+    border: none;
+    color: white;
+    border-radius: 50%;
+}
+
+.display-calculation{
+    color: white;
+    font-size: 45px;
+    margin: 0;
+    font-family: arial;;
+}

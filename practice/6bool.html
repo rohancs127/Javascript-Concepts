@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booleans</title>
+</head>
+<body>
+
+
+    <script>
+        if(15>=16){
+            console.log('Eligible to drive');
+        }
+        else{
+            console.log("Not eligible to drive");
+        }
+
+        let var1 //undefined
+        console.log('string'/4); //NaN
+
+        //ternary op
+        let val = (5>2) ? 6: 8;
+        console.log(val)
+
+        //guard operator
+        false && console.log('This doesnt print because already blocked due to false')
+
+        const ex1 = false && 'hello' //ex1 = false
+        const ex2 = true && 'hello' //ex2 = 'hello' //can use truthy values instead of true also
+
+        // default operator
+        let currency1 = 'eur' || 'usd'   // eur will be seleted since its truthy
+        let currency2 = undefined || 'usd' //usd will be selected since ubdefined is falsy
+        
+        //these are shortcuts for if else statements
+    </script>
+</body>
+</html>

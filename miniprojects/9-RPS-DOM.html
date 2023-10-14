@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <p>Rock Paper Scissors</p>
+        <button onclick="
+            randNo = Math.random();
+            cChoice=checkMove(randNo);
+            
+            if(cChoice==='Rock'){
+                result = 'Its a Tie.';
+
+            }
+            else if (cChoice==='Paper'){
+                result='You Lose.';
+            }
+            else if(cChoice==='Scissors'){
+                result = 'You Win.';
+            }
+            calculateScore(result);
+            updateResult();
+            updateChoiceElement('Rock');
+
+
+        ">Rock</button>
+        <button onclick="
+            randNo = Math.random();
+            cChoice=checkMove(randNo);
+            
+            if(cChoice==='Paper'){
+                result = 'Its a Tie.';
+            }
+            else if (cChoice==='Scissors'){
+                result='You Lose.';
+            }
+            else if(cChoice==='Rock'){
+                result = 'You Win.';
+            }
+            calculateScore(result);
+            updateResult();
+            updateChoiceElement('Paper');"
+            >Paper</button>
+
+        <button onclick="
+            randNo = Math.random();
+            cChoice=checkMove(randNo);
+            
+            if(cChoice==='Scissors'){
+                result = 'Its a Tie.';
+            }
+            else if (cChoice==='Rock'){
+                result='You Lose.';
+            }
+            else if(cChoice==='Paper'){
+                result = 'You Win.';
+            }
+            calculateScore(result);
+            updateResult();
+            updateChoiceElement('Scissors');"
+        >Scissors</button>
+
+    <p class="display-result"></p>
+    <p class="display-choice"></p>
+    <p class="display-score"></p>
+
+
+        <button onclick="
+            score.wins=0;
+            score.lose = 0;
+            score.tie =0;
+            localStorage.removeItem('score');
+            updateScoreElement();
+        ">Reset Score</button>    
+
+
+    <script>
+        let score=JSON.parse(localStorage.getItem('score')) ||  {
+                wins : 0,
+                lose : 0,
+                tie : 0
+            };
+
+        updateScoreElement();
+        
+        /*if(!score){
+            score = {
+                wins : 0,
+                lose : 0,
+                tie : 0
+            };
+        }*/
+
+        let randNo, cChoice, result;
+        function checkMove(randNo){
+            if(randNo>=0 && randNo<(1/3)){
+                return 'Rock';
+            }
+            else if(randNo>=(1/3) && randNo<(2/3)){
+                return 'Paper';
+            }
+            else if(randNo>=(2/3) && randNo<=1){
+                return 'Scissors';
+            }
+        }
+
+        function calculateScore(result){
+            if(result==='You Win.')
+                score.wins++;
+            else if(result==='You Lose.')
+                score.lose++;
+            else
+                score.tie++;
+    
+            localStorage.setItem('score',JSON.stringify(score));
+            updateScoreElement();
+        }
+
+
+        function updateResult(){
+            document.querySelector('.display-result').innerHTML = result;
+        }
+
+        function updateChoiceElement(string1){
+            document.querySelector('.display-choice').innerHTML = `You picked ${string1}, Computer picked ${cChoice}.`;
+        }
+
+        function updateScoreElement(){
+            document.querySelector('.display-score').innerHTML=`Wins: ${score.wins}, Losses: ${score.lose}, Ties: ${score.tie}`;
+        }
+
+    </script>
+</body>
+</html>

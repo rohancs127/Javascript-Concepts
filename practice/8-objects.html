@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+        const product={
+            name: 'bag',
+            price: 1000
+        };
+        console.log(product);
+        console.log(product.name);
+
+        product.name = 'college bag';
+        console.log(product);
+
+        product.size = '42L';
+
+        console.log(product);
+
+        delete product.size;
+        console.log(product);
+
+
+        const product2 = {
+            'delivery-time': '6 days', //or ['delivery-time']: '6 days'
+
+            rating : {  //nested object
+                stars: 4.7,
+                count: 300
+            }
+        };
+        console.log(product2['delivery-time']);
+        //bracket notation - another way ro declare variable inside objects
+        // used because declaring delivery-time noramlly and accessing through . will throw an error
+        
+        console.log(product2.rating);
+        console.log(product2.rating.stars);
+
+        let newObject ={
+           fun:  function add(a,b){
+                return a+b;
+            }
+        };
+        console.log(newObject)
+        a = newObject.fun(3,6);
+        console.log(a);
+
+        //built in objects: JSON and localstrorage
+        //convert object to json
+        console.log(JSON.stringify(product2));
+        let var1 = JSON.stringify(product2);
+
+        //back to js object
+        console.log(JSON.parse(var1));
+
+        //auto-boxing
+        console.log('hello'.length);
+        console.log('hello'.toUpperCase());
+
+        //taking a property out and  saving it in a variable
+        let object1 = {
+            message: 'hello'
+        };
+        //let message = oject1.message OR
+        let {message} = object1;
+        console.log(message);
+
+        let {name, price} = product;
+    </script>
+</body>
+</html>

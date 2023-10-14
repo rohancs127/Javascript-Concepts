@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>Youtube Subscribe Button</p>
+    <button style="margin-bottom: 80px;" onclick="
+      subscribe();
+    " class="subscribe-button">Subscribe</button>
+
+
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping</p>
+    <p>Orders over $40 = FREE shipping</p>
+    <input class="cost-value" type="text" placeholder="Cost of order" onkeydown="
+        calculateByEnter();
+    ">
+    <button onclick="
+        calculateCost();
+    ">Calculate</button>
+    <p style="margin-bottom: 80px;" class="display-cost"></p>
+
+
+    <input onkeyup="typeText()" class="type-something" type="text" placeholder="Type something">
+    <p class="display-element"></p>
+
+
+    <script>
+
+        function subscribe(){
+            const element=  document.querySelector('.subscribe-button');
+
+      if(element.innerText === 'Subscribe')
+            element.innerText = 'Subscribed';
+      else
+            element.innerHTML = 'Subscribe';
+        }
+
+        function calculateCost(){
+            const cost = (Number(document.querySelector('.cost-value').value))*100;
+            let ship = cost*100;
+            ship= (cost>0 && cost<4000)? 1000 : 0;
+            document.querySelector('.display-cost').innerHTML = `$${(cost+ship)/100}`;
+
+
+        }
+
+
+        function calculateByEnter(){
+            if (event.key === 'Enter')
+            calculateCost();
+        }
+
+        function typeText(){
+            const text = document.querySelector('.type-something').value;
+            document.querySelector('.display-element').innerHTML = text;
+        }
+
+    </script>
+</body>
+</html>

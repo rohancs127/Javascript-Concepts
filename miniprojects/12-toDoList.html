@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo list</title>
+    <style>
+        body{
+    font-family: arial;
+}
+.placeholder3{
+    padding-top: 10px;
+    padding-bottom: 8px;
+    padding-left: 8px;
+    margin-right: 10px;
+}
+.date-class{
+    padding-top: 6px;
+    padding-bottom: 7px;
+    padding-left: 8px;
+    padding-right: 5px;
+    margin-right: 10px;
+}
+.add-button{
+    padding: 12px;
+    padding-left: 37px;
+    padding-right: 39px;
+    border: none;
+    color: white;
+    background-color: green;
+    cursor: pointer;
+}
+
+.delete-button{
+    color: white;
+    background-color: rgb(102, 0, 0);
+    border:none;
+    padding: 12px;
+    padding-left: 28px;
+    padding-right: 30px;
+    max-height: 38.52px;
+}
+
+.display3{
+    margin-top: 5px;
+    display:grid;
+    grid-template-columns: 200px 150px 100px;
+    row-gap: 5px;
+    align-items: center;
+}
+    </style>
+</head>
+<body>
+    <p>Todo List Practice 1</p>
+    <input class="placeholder1" placeholder="Todo name">
+    <button onclick="addItemToArray1()">Add</button> 
+
+    <p style="margin-top: 50px;">Todo List Practice 2</p>
+    <input class="placeholder2" placeholder="Todo name">
+    <button onclick="addItemToArray2()">Add</button>
+    <div class="display2"></div> 
+
+    <p style="margin-top: 50px;">Todo List</p>
+    <input class="placeholder3" placeholder="Todo name">
+    <input type="date" class="date-class">
+    <button class="add-button" onclick="addItemToArray3()">Add</button>
+    <div class="display3"></div> 
+
+    <script>
+    let array1 = [];
+        function addItemToArray1(){
+            let elem = document.querySelector('.placeholder1');
+            array1.push(elem.value);
+            console.log(array1);
+            elem.value=null;
+        }
+
+        let array2 = [];
+        function addItemToArray2(){
+            let elem = document.querySelector('.placeholder2');
+            array2.push(elem.value);
+            let todoHtml='';
+            array2.forEach(function(arrayElement){
+                todoHtml+= `<p>${arrayElement}</p>`;
+            });
+
+            document.querySelector('.display2').innerHTML=todoHtml;
+
+            elem.value=null;
+        }
+
+        let array3 = [];
+        function renderItemArray3(){
+            let todoHtml='';
+            array3.forEach(function(arrayElement,index){
+                todoHtml+= `<p class="name">${arrayElement.name}</p> 
+                <p class="date">${arrayElement.date}</p>
+                <button class="delete-button" onclick="
+                    array3.splice(${index},1);
+                    renderItemArray3();
+                    ">Delete</button>`;
+            });
+
+            document.querySelector('.display3').innerHTML=todoHtml;
+
+            
+        }
+
+        function addItemToArray3(){
+            let elem = document.querySelector('.placeholder3');
+            let elem2 = document.querySelector('.date-class');
+            array3.push({name: elem.value,
+                        date: elem2.value});
+
+            elem.value=null;
+            elem2.value=null;
+            renderItemArray3();
+        }
+    </script>
+</body>
+</html>

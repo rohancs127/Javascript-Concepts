@@ -1,0 +1,71 @@
+
+body{
+    background-color: rgba(0, 0, 0, 0.907);
+    color:white;
+    font-family: arial;
+}
+.heading{
+    font-size: 30px;
+}
+
+.move-icon{
+    height: 45px;
+}
+
+.move-button{
+    background: none;
+    border: solid;
+    border-color: white;
+    padding: 20px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.display-result{
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 50px;
+    margin-bottom:50px;
+}
+.display-score{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.reset-button, .autoplay{
+    background: none;
+    border: 1px solid;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    transition: 0.3s;
+    cursor: pointer;
+
+}
+.reset-button:hover, .autoplay:hover{
+    background-color: white;
+    color: rgba(0, 0, 0, 0.907);
+}
+
+.light-theme{
+    background-color: white;
+    color:rgba(0, 0, 0, 0.907) ;
+}
+
+.button-light-theme{
+    background: none;
+    border-color: rgba(0, 0, 0, 0.907);
+    color: rgba(0, 0, 0, 0.907);
+}
+
+.reset-button-light-theme, .autoplay-light-theme{
+    background: none;
+    border-color: rgba(0, 0, 0, 0.907);
+    color: rgba(0, 0, 0, 0.907);
+    transition: 0.3s;
+}
+.reset-button-light-theme:hover, .autoplay-light-theme:hover{
+    background-color: rgba(0, 0, 0, 0.907);
+    color: white;
+}

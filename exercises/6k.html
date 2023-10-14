@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Cart Quantity</p>
+    <button onclick="
+        print()
+    ">Show Quantity</button>
+    <button onclick="
+        (quantity+1<=10)? quantity++: alert('Cart is full');
+        print()
+    ">Add to cart</button>
+    <button onclick="
+        (quantity+2<=10)? quantity+=2: alert('Cart is full');
+        print()
+    ">+2</button>
+    <button onclick="
+        (quantity+3<=10)? quantity+=3: alert('Cart is full');
+        print()
+    ">+3</button>
+    <button onclick="
+        quantity = 0;
+        console.log('Cart was reset');
+        print()
+    ">Reset Cart</button>
+
+
+    <button onclick="
+        (quantity+4<=10)? quantity+=4: alert('Cart is full');
+        print()
+    ">+4</button>
+    <button onclick="
+        (quantity+5<=10)? quantity+=5: alert('Cart is full');
+        print()
+    ">+5</button>
+    <button onclick="
+        (quantity-1>=0)? quantity--: alert('Not enough items in the cart');
+        print()
+    ">Remove from cart</button>
+    <button onclick="
+        (quantity-2>=0)? quantity-=2: alert('Not enough items in the cart');
+        print()
+    ">-2</button>
+    <button onclick="
+        (quantity-3>=0)? quantity-=3: alert('Not enough items in the cart');
+        print()
+    ">-3</button>
+
+
+    <script>
+        let quantity = 0;
+        function print(){
+            console.log(`Cart Quantity: ${quantity}`);
+        }
+    </script>
+</body> 
+</html>

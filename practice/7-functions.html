@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let totalCost = 56.79;
+        percentage=20
+
+        function tax(totalCost, percentage=10){
+            mul = percentage/100;
+            let taxval = Math.round(((totalCost*100)*mul))/100;
+            return taxval;
+
+        }
+        taxval = tax(totalCost, percentage)
+        console.log(taxval);
+        taxval = tax(totalCost)
+        console.log(taxval)
+    </script>
+</body>
+</html>

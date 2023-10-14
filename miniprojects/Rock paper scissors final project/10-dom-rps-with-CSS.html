@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+
+    <link rel="stylesheet" href="10-dom-rps-with-CSS.css"> 
+
+</head>
+<body>
+    <h1 class="heading">Rock Paper Scissors</h1>
+        <button class="move-button rock" onclick="
+            moveIcon='rock-emoji.png'
+            randNo = Math.random();
+            cChoice=checkMove(randNo);
+            
+            if(cChoice==='Rock'){
+                result = 'Its a Tie.';
+
+            }
+            else if (cChoice==='Paper'){
+                result='You Lose.';
+            }
+            else if(cChoice==='Scissors'){
+                result = 'You Win.';
+            }
+            calculateScore(result);
+            updateResult();
+            updateChoiceElement();
+
+
+        "><img class="move-icon" src="/images/rock-emoji.png"></button>
+
+        <button class="move-button paper" onclick="
+            moveIcon='paper-emoji.png'
+            randNo = Math.random();
+            cChoice=checkMove(randNo);
+            
+            if(cChoice==='Paper'){
+                result = 'Its a Tie.';
+            }
+            else if (cChoice==='Scissors'){
+                result='You Lose.';
+            }
+            else if(cChoice==='Rock'){
+                result = 'You Win.';
+            }
+            calculateScore(result);
+            updateResult();
+            updateChoiceElement();"
+            ><img class="move-icon" src="/images/paper-emoji.png"></button>
+
+        <button class="move-button scissors" onclick="
+            moveIcon='scissors-emoji.png'
+            randNo = Math.random();
+            cChoice=checkMove(randNo);
+            
+            if(cChoice==='Scissors'){
+                result = 'Its a Tie.';
+            }
+            else if (cChoice==='Rock'){
+                result='You Lose.';
+            }
+            else if(cChoice==='Paper'){
+                result = 'You Win.';
+            }
+            calculateScore(result);
+            updateResult();
+            updateChoiceElement();"
+        ><img class="move-icon" src="/images/scissors-emoji.png"></button>
+
+    <p class="display-result"></p>
+    <p class="display-choice"></p>
+    <p class="display-score"></p>
+
+
+        <button class="reset-button" onclick="
+            score.wins=0;
+            score.lose = 0;
+            score.tie =0;
+            localStorage.removeItem('score');
+            updateScoreElement();
+        ">Reset Score</button>    
+
+        <p>
+        <button onclick="
+                changeTheme();
+            " class="theme-button reset-button">Dark</button>
+        </p>
+
+
+
+
+    <script src="10-dom-rps-with-CSS.js"></script>
+</body>
+</html>

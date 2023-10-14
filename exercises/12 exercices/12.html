@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App</title>
+</head>
+<body>
+
+    <button onclick="changeText()" class="button">Start</button>
+
+    <button onclick="addToCart()" class="button2">Add to cart</button>
+    <p class="result"></p>
+    <p>
+        <button onclick="num+=1;" class="add">Add</button>
+        <button onclick="num-=1;" class="remove">Remove</button>
+    </p>
+
+    <script>
+        //12a
+        let add = function(){
+            console.log(2+3);
+        }
+        add();
+        add();
+
+        //12b
+        function runTwice(param){
+            let x=2;
+            while(x--){
+                param();
+            }
+        }
+
+        runTwice(add);
+        runTwice(function(){console.log('12b')});
+
+        //12c-d
+        function changeText(){
+            document.querySelector('.button').innerText='Loading...';
+            setInterval(function(){
+                document.querySelector('.button').innerText = "Finished!";
+            },1000)
+        }
+
+        //12e-f
+        let id;
+        function addToCart(){
+            document.querySelector('.result').innerHTML='Added';
+
+            clearInterval(id);
+            id= setInterval(function(){
+                document.querySelector('.result').innerHTML="";
+            }, 2000);
+        }
+
+        //12g-h
+        let isTitleApp = true;
+        let num=2;
+
+            setInterval(function(){
+                let title = document.title;
+                if(isTitleApp){
+                    document.title=`(${num}) New messages`;
+                    isTitleApp=false;
+                }
+                else{
+                    document.title = 'App';
+                    isTitleApp=true;
+                }
+            },1000);
+    </script>
+</body>
+</html>

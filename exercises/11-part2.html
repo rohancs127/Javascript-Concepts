@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //11o-q
+        let arrayOfStrings1 = ['hello','world', 'search', 'good'];
+
+        function findIndex(array, word){
+            let index;
+        for(i=0; i<array.length; i++){
+            if(array[i] === word){
+                index=i;
+                break;
+            }
+            else
+                index=-1;
+        }
+            return index;
+        }
+
+        console.log(findIndex(arrayOfStrings1, 'search'));
+        console.log(findIndex(['green','red','blue','red'],'red'));
+        console.log(findIndex(['green','red','blue','red'],'yellow'));
+
+
+        //11r-t
+        function removeEggs(array){
+            for(let i=0; i<array.length; i++){
+                if(array[i]==='egg'){
+                    array.splice(i,1);
+                    i=i-1;
+                }
+            }
+                return array;
+        }
+
+        console.log(removeEggs(['egg','apple','egg','egg','ham','egg','egg','egg']));
+
+        function removeEggs2(array){
+            let i=0;
+            let count =0;
+            while(i<array.length){
+                if(array[i]==='egg'){
+                    count++;
+                    if(count<3){
+                        array.splice(i,1);
+                        i-=1;
+                    }
+                }
+                i++;
+            }
+            return array;
+        }
+
+        console.log(removeEggs2(['egg','apple','egg','egg','ham','egg']));
+
+        function remove2EggsFromEnd(array){
+            let arrayRev = array.slice();
+            arrayRev.reverse();
+            let i=0;
+            let count =0;
+            while(i<arrayRev.length){
+                if(arrayRev[i]==='egg'){
+                    count++;
+                    if(count<3){
+                        arrayRev.splice(i,1);
+                        i-=1;
+                    }
+                }
+                i++;
+            }
+            return arrayRev.reverse();
+        }
+        let foods = ['egg','apple','egg','ham','egg'];
+        console.log(remove2EggsFromEnd(foods));
+        console.log(foods);
+
+    </script>
+</body>
+</html>

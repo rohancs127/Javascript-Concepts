@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+
+    <link rel="stylesheet" href="10h.css">
+</head>
+<body>
+    
+    <p>Youtube Subscribe Button</p>
+    <button style="margin-bottom: 80px;" onclick="  
+      subscribe();
+    " class="subscribe-button">Subscribe</button>
+
+
+    <p>Amazon Shipping Calculator</p>
+    <p>Orders under $40 = +$10 shipping</p>
+    <p>Orders over $40 = FREE shipping</p>
+    <input class="cost-value" type="text" placeholder="Cost of order" onkeydown="
+        calculateByEnter();
+    ">
+    <button onclick="
+        calculateCost();
+    " class="calculate-button">Calculate</button>
+    <p class="display-cost"></p>
+
+
+
+    <script src="10h.js">
+
+    </script>
+</body>
+</html>

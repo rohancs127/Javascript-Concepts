@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="
+        playGame('heads');
+        ">Heads</button>
+
+
+    <button onclick="
+        playGame('tails');
+    ">Tails</button>
+    
+    <button onclick="
+        score.win = 0;
+        score.lose = 0;
+        localStorage.removeItem('score');
+        document.querySelector('.display-score').innerHTML = `Wins: ${score.win}, Lose: ${score.lose}`;
+    ">Reset button</button>
+
+    <p class="display-choice"></p>
+    <p class="display-conclusion"></p>
+    <p class="display-score"></p>
+
+    <script>
+        let randNo, result, conclusion;
+        let score= JSON.parse(localStorage.getItem('score'));;
+        
+        if(!score)
+        score = {
+            win: 0,
+            lose: 0
+        };
+
+        function playGame(guess){
+
+            randNo = Math.random();
+            result = (randNo<=0.5) ? 'heads': 'tails';
+            if(guess===result){
+                conclusion = 'You Win.';
+                score.win++;
+            }
+            else{
+                conclusion='You Lose.';
+                score.lose++;
+            }
+
+            document.querySelector('.display-choice').innerHTML = `You chose ${guess}`;
+            document.querySelector('.display-conclusion').innerHTML= conclusion;
+            document.querySelector('.display-score').innerHTML = `Wins: ${score.win}, Lose: ${score.lose}`;
+
+            localStorage.setItem('score',JSON.stringify(score));
+        }
+
+            
+    </script>
+</body>
+</html>
