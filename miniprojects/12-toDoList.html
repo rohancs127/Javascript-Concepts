@@ -63,7 +63,7 @@
     <p style="margin-top: 50px;">Todo List</p>
     <input class="placeholder3" placeholder="Todo name">
     <input type="date" class="date-class">
-    <button class="add-button" onclick="addItemToArray3()">Add</button>
+    <button class="add-button">Add</button>
     <div class="display3"></div> 
 
     <script>
@@ -95,16 +95,18 @@
             array3.forEach((arrayElement,index)=>{
                 todoHtml+= `<p class="name">${arrayElement.name}</p> 
                 <p class="date">${arrayElement.date}</p>
-                <button class="delete-button" onclick="
-                    array3.splice(${index},1);
-                    renderItemArray3();
-                    ">Delete</button>`;
+                <button class="delete-button">Delete</button>`;
             });
 
             document.querySelector('.display3').innerHTML=todoHtml;
-
-            
+            document.querySelectorAll('.delete-button').forEach((deleteButton, index) =>{
+                deleteButton.addEventListener('click', ()=>{
+                array3.splice(index,1);
+                renderItemArray3();
+                })
+            })
         }
+
 
         function addItemToArray3(){
             let elem = document.querySelector('.placeholder3');
@@ -116,6 +118,11 @@
             elem2.value=null;
             renderItemArray3();
         }
+
+document.querySelector('.add-button').addEventListener('click', ()=>{
+    addItemToArray3();
+})
+
     </script>
 </body>
 </html>
