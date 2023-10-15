@@ -63,8 +63,29 @@
 
 
         //continue in forEach
+        // ['string1', 'string2', 'string3'].forEach(
+        //     function(value, index){
+
+        //         if(value==='string2')
+        //         return;
+
+        //         console.log(value);
+        //         console.log(index);
+        //     }
+        // );
+
+        //denoting functions with arrow
+        let arrowFunc = ()=>{
+            console.log('Hello World!');
+        }
+        arrowFunc();
+
+        let oneLinefunc = (param)=>{return param+1};
+        console.log(oneLinefunc(5));
+
+
         ['string1', 'string2', 'string3'].forEach(
-            function(value, index){
+            (value, index)=>{
 
                 if(value==='string2')
                 return;
