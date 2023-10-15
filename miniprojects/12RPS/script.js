@@ -160,7 +160,7 @@ let intervalID ;
 
 function autoPlay(){
     if (!isAutoplay){
-    intervalID = setInterval(function(){
+    intervalID = setInterval(() => {
         let random = Math.random();
         randNo=Math.random();
         myChoice = checkMove(random);
