@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <button class="button">Click</button>
     <script>
         // function greeting(){
         //     console.log("Hello World!");
@@ -94,6 +95,30 @@
                 console.log(index);
             }
         );
+
+
+        //2 ways to denote function inside object
+        let obj = {
+            method1: () =>{
+
+            },
+            method2(){
+
+            }
+        }
+
+        const buttonElement = document.querySelector('.button') ;
+        const func = () =>{
+            buttonElement.innerText = 'Clicked';
+        };
+
+        buttonElement.addEventListener('click', func);
+
+        //buttonElement.removeEventListener('click', func);
+
+        buttonElement.addEventListener('click', () =>{
+            alert('Clicked');
+        })
 
     </script>
 </body>

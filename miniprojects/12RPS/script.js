@@ -177,3 +177,69 @@ function autoPlay(){
   }
 }
 
+
+document.querySelector('.rock').addEventListener('click', ()=>{
+            myChoice = 'Rock';
+            randNo = Math.random();
+            playGame(randNo);
+});
+
+
+
+document.querySelector('.paper').addEventListener('click', ()=>{
+    myChoice='Paper';
+    randNo = Math.random();
+    playGame(randNo);
+});
+
+
+document.querySelector('.scissors').addEventListener('click', ()=>{
+            myChoice = 'Scissors'
+            randNo = Math.random();
+            playGame(randNo);
+});
+
+
+document.querySelector('.reset-button').addEventListener('click', ()=>{
+            score.wins=0;
+            score.lose = 0;
+            score.tie =0;
+            localStorage.removeItem('score');
+            updateScoreElement();
+});
+
+document.querySelector('.autoplay').addEventListener('click', ()=>{
+    autoPlay();
+});
+
+document.querySelector('.theme-button').addEventListener('click', ()=>{
+    changeTheme();
+});
+
+document.body.addEventListener('keydown', (event)=>{
+    if (event.key === 'r'){
+        myChoice = 'Rock';
+        randNo = Math.random();
+        playGame(randNo);
+    }
+    else if(event.key==='p'){
+        myChoice='Paper';
+        randNo = Math.random();
+        playGame(randNo);
+    }
+    else if(event.key==='s'){
+        myChoice = 'Scissors'
+        randNo = Math.random();
+        playGame(randNo);
+    }
+    else if(event.key === 'a'){
+        autoPlay();
+    }
+    else if (event.key==='Enter'){
+            score.wins=0;
+            score.lose = 0;
+            score.tie =0;
+            localStorage.removeItem('score');
+            updateScoreElement();
+    }
+})

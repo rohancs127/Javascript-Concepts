@@ -80,7 +80,7 @@
             let elem = document.querySelector('.placeholder2');
             array2.push(elem.value);
             let todoHtml='';
-            array2.forEach(function(arrayElement){
+            array2.forEach((arrayElement)=>{
                 todoHtml+= `<p>${arrayElement}</p>`;
             });
 
@@ -92,7 +92,7 @@
         let array3 = [];
         function renderItemArray3(){
             let todoHtml='';
-            array3.forEach(function(arrayElement,index){
+            array3.forEach((arrayElement,index)=>{
                 todoHtml+= `<p class="name">${arrayElement.name}</p> 
                 <p class="date">${arrayElement.date}</p>
                 <button class="delete-button" onclick="

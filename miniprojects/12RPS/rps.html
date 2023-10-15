@@ -10,43 +10,23 @@
 </head>
 <body>
     <h1 class="heading">Rock Paper Scissors</h1>
-        <button class="move-button rock" onclick="
-            myChoice = 'Rock';
-            randNo = Math.random();
-            playGame(randNo);
-        "><img class="move-icon" src="/images/rock-emoji.png"></button>
+        <button class="move-button rock"><img class="move-icon" src="/images/rock-emoji.png"></button>
 
-        <button class="move-button paper" onclick="
-            myChoice='Paper';
-            randNo = Math.random();
-            playGame(randNo);"
-            ><img class="move-icon" src="/images/paper-emoji.png"></button>
+        <button class="move-button paper"><img class="move-icon" src="/images/paper-emoji.png"></button>
 
-        <button class="move-button scissors" onclick="
-            myChoice = 'Scissors'
-            randNo = Math.random();
-            playGame(randNo);"
-        ><img class="move-icon" src="/images/scissors-emoji.png"></button>
+        <button class="move-button scissors"><img class="move-icon" src="/images/scissors-emoji.png"></button>
 
     <p class="display-result"></p>
     <p class="display-choice"></p>
     <p class="display-score"></p>
 
 
-        <p><button class="reset-button" onclick="
-            score.wins=0;
-            score.lose = 0;
-            score.tie =0;
-            localStorage.removeItem('score');
-            updateScoreElement();
-        ">Reset Score</button>
-        <button class="autoplay" onclick="autoPlay()">AutoPlay</button>
+        <p><button class="reset-button">Reset Score</button>
+        <button class="autoplay">AutoPlay</button>
         </p>    
 
         <p>
-        <button onclick="
-                changeTheme();
-            " class="theme-button reset-button">Dark</button>
+        <button class="theme-button reset-button">Dark</button>
         </p>
 
 
