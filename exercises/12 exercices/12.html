@@ -7,25 +7,25 @@
 </head>
 <body>
 
-    <button onclick="changeText()" class="button">Start</button>
+    <button class="button">Start</button>
 
-    <button onclick="addToCart()" class="button2">Add to cart</button>
+    <button class="button2">Add to cart</button>
     <p class="result"></p>
     <p>
-        <button onclick="num+=1;" class="add">Add</button>
-        <button onclick="num-=1;" class="remove">Remove</button>
+        <button class="add">Add</button>
+        <button class="remove">Remove</button>
     </p>
 
     <script>
         //12a
-        let add = function(){
+        let add = ()=>{
             console.log(2+3);
         }
         add();
         add();
 
         //12b
-        function runTwice(param){
+        const runTwice = (param)=>{
             let x=2;
             while(x--){
                 param();
@@ -33,23 +33,23 @@
         }
 
         runTwice(add);
-        runTwice(function(){console.log('12b')});
+        runTwice(()=>{console.log('12b')});
 
         //12c-d
-        function changeText(){
+        const changeText = ()=>{
             document.querySelector('.button').innerText='Loading...';
-            setInterval(function(){
+            setInterval(()=>{
                 document.querySelector('.button').innerText = "Finished!";
             },1000)
         }
 
         //12e-f
         let id;
-        function addToCart(){
+        const addToCart = ()=>{
             document.querySelector('.result').innerHTML='Added';
 
             clearInterval(id);
-            id= setInterval(function(){
+            id= setInterval(()=>{
                 document.querySelector('.result').innerHTML="";
             }, 2000);
         }
@@ -58,7 +58,7 @@
         let isTitleApp = true;
         let num=2;
 
-            setInterval(function(){
+            setInterval(()=>{
                 let title = document.title;
                 if(isTitleApp){
                     document.title=`(${num}) New messages`;
@@ -94,6 +94,40 @@
         console.log(countPositive([-2,3,-5,7,10]));
 
 
+        //12m
+        const addNum = (array,num)=> array.map((value)=>value+num);
+        console.log(addNum([1,2,3],2));
+        console.log(addNum([-2,-1,0,99],2));
+
+        const removeEgg = (foods)=> foods.filter((value)=>(value!='egg'));
+        console.log(removeEgg(['egg','apple','egg','egg','ham']));
+
+        const removeEgg2 = (foods) =>{
+            let count =0;
+            return foods.filter((value)=>{
+                if(value==='egg' && count<2){
+                    count++;
+                    return false;
+                }
+                return true;
+            })
+        }
+
+        document.querySelector('.button').addEventListener('click', ()=>{
+            changeText();
+        })
+
+        document.querySelector('.button2').addEventListener('click', ()=>{
+            addToCart();
+        })
+
+        document.querySelector('.add').addEventListener('click', ()=>{
+            num+=1;
+        })
+
+        document.querySelector('.remove').addEventListener('click', ()=>{
+            num-=1;
+        })
         
     </script>
 </body>

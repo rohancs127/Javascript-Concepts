@@ -126,29 +126,41 @@ let paperButtonElement = document.querySelector('.paper');
 let scissorsButtonElement = document.querySelector('.scissors');
 let resetButtonElement = document.querySelector('.reset-button');
 let autoplayButtonElement = document.querySelector('.autoplay')
+let yesButtonElement = document.querySelector('.yes-button');
+let noButtonElement = document.querySelector('.no-button');
 
 
 if(themeButtonText.innerText === 'Dark'){ 
     themeButtonText.innerText= 'Light';
 themeButtonText.classList.add('reset-button-light-theme');
 themeButtonText.classList.add('autoplay-light-theme');
+themeButtonText.classList.add('yes-light-theme');
+themeButtonText.classList.add('no-light-theme');
+
 document.body.classList.add('light-theme');
 rockButtonElement.classList.add('button-light-theme')
 paperButtonElement.classList.add('button-light-theme')
 scissorsButtonElement.classList.add('button-light-theme')
 resetButtonElement.classList.add('reset-button-light-theme');
 autoplayButtonElement.classList.add('autoplay-light-theme');
+yesButtonElement.classList.add('yes-light-theme');
+noButtonElement.classList.add('no-light-theme');
 }
 else{
     themeButtonText.innerText='Dark';
 themeButtonText.classList.remove('reset-button-light-theme');
 themeButtonText.classList.remove('autoplay-light-theme');
+themeButtonText.classList.remove('yes-light-theme');
+themeButtonText.classList.remove('no-light-theme');
+
     document.body.classList.remove('light-theme');
 rockButtonElement.classList.remove('button-light-theme')
 paperButtonElement.classList.remove('button-light-theme')
 scissorsButtonElement.classList.remove('button-light-theme')
 resetButtonElement.classList.remove('reset-button-light-theme');
 autoplayButtonElement.classList.remove('autoplay-light-theme');
+yesButtonElement.classList.remove('yes-light-theme');
+noButtonElement.classList.remove('no-light-theme');
 
 
 }
@@ -201,11 +213,7 @@ document.querySelector('.scissors').addEventListener('click', ()=>{
 
 
 document.querySelector('.reset-button').addEventListener('click', ()=>{
-            score.wins=0;
-            score.lose = 0;
-            score.tie =0;
-            localStorage.removeItem('score');
-            updateScoreElement();
+            askConfirmation();
 });
 
 document.querySelector('.autoplay').addEventListener('click', ()=>{
@@ -235,11 +243,25 @@ document.body.addEventListener('keydown', (event)=>{
     else if(event.key === 'a'){
         autoPlay();
     }
-    else if (event.key==='Enter'){
-            score.wins=0;
-            score.lose = 0;
-            score.tie =0;
-            localStorage.removeItem('score');
-            updateScoreElement();
+    else if (event.key==='Backspace'){
+        askConfirmation();
     }
-})
+});
+
+const askConfirmation = ()=>{
+    document.querySelector('.confirm').innerHTML=`<p>Are you sure you want to reset the score <button class="yes-button">Yes</button> <button class="no-button">No</button></p>`
+
+    document.querySelector('.yes-button').addEventListener('click', ()=>{
+        score.wins=0;
+        score.lose = 0;
+        score.tie =0;
+        localStorage.removeItem('score');
+        updateScoreElement();
+
+        document.querySelector('.confirm').innerHTML='';
+    });
+
+    document.querySelector('.no-button').addEventListener('click', ()=>{
+        document.querySelector('.confirm').innerHTML='';
+    })
+}

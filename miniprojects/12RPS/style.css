@@ -32,7 +32,7 @@ body{
     margin-bottom: 50px;
 }
 
-.reset-button, .autoplay{
+.reset-button, .autoplay, .yes-button, .no-button{
     background: none;
     border: 1px solid;
     color: white;
@@ -43,7 +43,7 @@ body{
     cursor: pointer;
 
 }
-.reset-button:hover, .autoplay:hover{
+.reset-button:hover, .autoplay:hover, .yes-button:hover, .no-button:hover{
     background-color: white;
     color: rgba(0, 0, 0, 0.907);
 }
@@ -59,13 +59,13 @@ body{
     color: rgba(0, 0, 0, 0.907);
 }
 
-.reset-button-light-theme, .autoplay-light-theme{
+.reset-button-light-theme, .autoplay-light-theme, .yes-light-theme, .no-light-theme{
     background: none;
     border-color: rgba(0, 0, 0, 0.907);
     color: rgba(0, 0, 0, 0.907);
     transition: 0.3s;
 }
-.reset-button-light-theme:hover, .autoplay-light-theme:hover{
+.reset-button-light-theme:hover, .autoplay-light-theme:hover, .yes-light-theme:hover, .no-light-theme:hover{
     background-color: rgba(0, 0, 0, 0.907);
     color: white;
 }
